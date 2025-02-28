@@ -119,12 +119,6 @@
     .wp-block-stretchypants-grid-gallery {
         --item-ar: 3/4;
 
-        .flickity-slider {
-            figure {
-                height: auto;
-            }
-        }
-
         .flickity-page-dots {
             position: absolute;
             left: 50%;
