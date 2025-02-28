@@ -6,7 +6,7 @@ A lightweight and flexible grid gallery block built with ACF for WordPress.
 
 ### Prerequisites
 - Node.js and npm installed
-- WordPress with ACF Pro installed and activated
+- WordPress
 
 ### Installation
 1. Clone this repository to your WordPress plugins directory
