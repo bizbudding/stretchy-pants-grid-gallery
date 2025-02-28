@@ -114,11 +114,11 @@
         }
 
         img,
-        video,
-        iframe {
+        video {
             display: block;
             width: 100%;
             height: 100%;
+            aspect-ratio: var(--item-ar);
             object-fit: cover;
         }
 
