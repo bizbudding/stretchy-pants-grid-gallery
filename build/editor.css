@@ -120,6 +120,7 @@
 
     .wp-block-stretchypants-grid-gallery {
         --item-ar: 3/4;
+        aspect-ratio: var(--item-ar);
 
         .flickity-page-dots {
             position: absolute;
