@@ -3622,19 +3622,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let flickityInstances = new Map(); // Store Flickity instances
   let lightboxInstances = new Map(); // Store GLightbox instances
 
-  // const updateCounter = (galleryEl, counter) => {
-  //     const slideNumber = flkty.selectedIndex + 1;
-  //     const slideCount = flkty.slides.length;
-  //     counter.textContent = `${slideNumber}/${slideCount}`;
-  // };
-
   // Function to initialize GLightbox for a gallery
   const initializeLightbox = galleryEl => {
     const elements = Array.from(galleryEl.querySelectorAll('figure')).map(figure => {
       const media = figure.querySelector('img, video');
+      const description = figure.querySelector('figcaption');
       if (!media) return null;
       return {
-        href: media.src
+        href: media.src,
+        description: description ? description.textContent : ''
       };
     }).filter(Boolean);
     const lightbox = glightbox__WEBPACK_IMPORTED_MODULE_3___default()({
@@ -3645,12 +3641,10 @@ document.addEventListener('DOMContentLoaded', () => {
       openEffect: 'fade',
       closeEffect: 'fade',
       cssEfects: {
-        // This are some of the animations included, no need to overwrite
         fade: {
           in: 'fadeIn',
           out: 'fadeOut'
         }
-        //   zoom: { in: 'zoomIn', out: 'zoomOut' }
       }
     });
     lightbox.on('slide_before_load', data => {
