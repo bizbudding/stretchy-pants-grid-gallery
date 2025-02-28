@@ -5,7 +5,7 @@
 	"description": "A lightweight and flexible grid gallery block.",
 	"category": "media",
 	"keywords": [ "gallery", "grid", "images", "video" ],
-	"textdomain": "sp-grid-gallery",
+	"textdomain": "stretchy-pants-grid-gallery",
 	"version": "0.1.0",
 	"supports": {
 		"align": [ "wide", "full" ],

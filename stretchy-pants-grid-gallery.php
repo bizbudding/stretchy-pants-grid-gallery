@@ -8,10 +8,12 @@
  * Author:            BizBudding
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       sp-grid-gallery
+ * Text Domain:       stretchy-pants-grid-gallery
  */
 
 namespace StetchyPants\GridGallery;
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -28,4 +30,21 @@ add_action( 'init', __NAMESPACE__ . '\init' );
  */
 function init() {
     register_block_type( __DIR__ . '/block' );
+}
+
+add_action( 'plugins_loaded', __NAMESPACE__ . '\updater' );
+/**
+ * Setup the updater.
+ *
+ * composer require yahnis-elsts/plugin-update-checker
+ *
+ * @since 0.1.0
+ *
+ * @uses https://github.com/YahnisElsts/plugin-update-checker/
+ *
+ * @return void
+ */
+function updater() {
+    $updater = PucFactory::buildUpdateChecker( 'https://github.com/bizbudding/stretchy-pants-grid-gallery', __FILE__, 'stretchy-pants-grid-gallery' );
+    $updater->setBranch( 'main' );
 }

@@ -22,7 +22,7 @@ npm install
 
 ### Directory Structure
 ```
-sp-grid-gallery/
+stretchy-pants-grid-gallery/
 ├── build/               # Compiled assets (generated)
 │   ├── css/
 │   └── js/
