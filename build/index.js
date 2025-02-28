@@ -206,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
   }) => {
     const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
     const innerBlocksProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useInnerBlocksProps)(blockProps, {
-      allowedBlocks: ['core/image', 'core/video', 'core/embed'],
+      allowedBlocks: ['core/image', 'core/video'],
       template: [['core/video'], ['core/image'], ['core/image']],
       templateLock: false,
       max: 6

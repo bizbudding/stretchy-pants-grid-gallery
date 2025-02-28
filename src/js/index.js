@@ -24,7 +24,6 @@ registerBlockType('stretchypants/grid-gallery', {
             allowedBlocks: [
                 'core/image',
                 'core/video',
-                'core/embed'
             ],
             template: [
                 ['core/video'],
