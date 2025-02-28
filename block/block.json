@@ -1,0 +1,18 @@
+{
+	"apiVersion": 3,
+	"name": "stretchypants/grid-gallery",
+	"title": "SP Grid Gallery",
+	"description": "A lightweight and flexible grid gallery block.",
+	"category": "media",
+	"keywords": [ "gallery", "grid", "images", "video" ],
+	"textdomain": "sp-grid-gallery",
+	"version": "0.1.0",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false
+	},
+	"editorScript": "file:../build/index.js",
+	"editorStyle": "file:../build/editor.css",
+	"viewStyle": "file:../build/frontend.css",
+	"viewScript": "file:../build/frontend.js"
+}

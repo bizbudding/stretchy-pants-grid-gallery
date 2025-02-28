@@ -1,0 +1,35 @@
+{
+  "name": "sp-gallery-grid",
+  "version": "1.0.0",
+  "description": "A lightweight and flexible grid gallery block",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "packages-update": "wp-scripts packages-update",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^26.19.0",
+    "remove-files-webpack-plugin": "^1.5.0"
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^12.15.0",
+    "@wordpress/blocks": "^12.24.0",
+    "@wordpress/i18n": "^4.47.0",
+    "flickity": "^3.0.0",
+    "glightbox": "^3.3.1",
+    "webpack-remove-empty-scripts": "^1.0.4",
+    "wp-scripts": "^0.0.1-security"
+  },
+  "main": "build/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
