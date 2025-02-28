@@ -107,6 +107,12 @@
 }
 
 @media (max-width: 599px) {
+    .wp-block-stretchypants-grid-gallery:not(.flickity-enabled) {
+        figure:not(:nth-of-type(1)) {
+            display: none;
+        }
+    }
+
     .wp-block-stretchypants-grid-gallery {
         --item-ar: 3/4;
 
