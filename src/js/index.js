@@ -35,7 +35,12 @@ registerBlockType('stretchypants/grid-gallery', {
 			],
 			template: [
 				['core/video', {
-					src: `${pluginUrl}assets/placeholder.mp4`
+					src: `${pluginUrl}assets/placeholder.mp4`,
+					autoplay: true,
+					controls: false,
+					loop: true,
+					muted: true,
+					playsInline: true
 				}],
 				['core/image', {
 					url: `${pluginUrl}assets/placeholder.jpg`,
