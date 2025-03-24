@@ -45,6 +45,6 @@ add_action( 'plugins_loaded', __NAMESPACE__ . '\updater' );
  * @return void
  */
 function updater() {
-    $updater = PucFactory::buildUpdateChecker( 'https://github.com/bizbudding/stretchy-pants-grid-gallery', __FILE__, 'stretchy-pants-grid-gallery' );
-    $updater->setBranch( 'main' );
+	$updater = PucFactory::buildUpdateChecker( 'https://github.com/bizbudding/stretchy-pants-grid-gallery', __FILE__, 'stretchy-pants-grid-gallery' );
+	$updater->setBranch( 'main' );
 }
