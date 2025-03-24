@@ -29,7 +29,7 @@ add_action( 'init', __NAMESPACE__ . '\init' );
  * @return void
  */
 function init() {
-    register_block_type( __DIR__ . '/block' );
+	register_block_type( __DIR__ . '/block', [ 'pluginUrl' => plugin_dir_url( __FILE__ ) ] );
 }
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\updater' );
@@ -47,4 +47,22 @@ add_action( 'plugins_loaded', __NAMESPACE__ . '\updater' );
 function updater() {
 	$updater = PucFactory::buildUpdateChecker( 'https://github.com/bizbudding/stretchy-pants-grid-gallery', __FILE__, 'stretchy-pants-grid-gallery' );
 	$updater->setBranch( 'main' );
+}
+
+add_action('enqueue_block_editor_assets', __NAMESPACE__ . '\localize_editor_assets');
+/**
+ * Localize the editor assets.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function localize_editor_assets() {
+	wp_localize_script(
+		'stretchypants-grid-gallery-editor-script',
+		'spGridGalleryVars',
+		[
+			'pluginUrl' => plugin_dir_url(__FILE__)
+		]
+	);
 }

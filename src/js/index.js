@@ -7,10 +7,9 @@ import { gallery as icon } from '@wordpress/icons';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { FocalPointPicker, PanelBody } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { useState, cloneElement } from '@wordpress/element';
 import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
-import React from 'react';
 
 /**
  * Internal dependencies
@@ -25,22 +24,47 @@ import metadata from '../../block/block.json';
 registerBlockType('stretchypants/grid-gallery', {
 	...metadata,
 	icon,
-	edit: ({ clientId }) => {
+	edit: () => {
 		const blockProps = useBlockProps();
+		const pluginUrl = window.spGridGalleryVars?.pluginUrl.replace(/\/?$/, '/'); // Ensure trailing slash
 
 		const innerBlocksProps = useInnerBlocksProps(blockProps, {
 			allowedBlocks: [
 				'core/image',
 				'core/video',
 			],
-			// Template provides initial block structure
 			template: [
-				['core/video'],
-				['core/image'],
-				['core/image'],
-				['core/image'],
-				['core/image'],
-				['core/image']
+				['core/video', {
+					src: `${pluginUrl}assets/placeholder.mp4`
+				}],
+				['core/image', {
+					url: `${pluginUrl}assets/placeholder.jpg`,
+					alt: 'Placeholder image'
+				}],
+				['core/image', {
+					url: `${pluginUrl}assets/placeholder.jpg`,
+					alt: 'Placeholder image'
+				}],
+				['core/image', {
+					url: `${pluginUrl}assets/placeholder.jpg`,
+					alt: 'Placeholder image'
+				}],
+				['core/image', {
+					url: `${pluginUrl}assets/placeholder.jpg`,
+					alt: 'Placeholder image'
+				}],
+				['core/image', {
+					url: `${pluginUrl}assets/placeholder.jpg`,
+					alt: 'Placeholder image'
+				}],
+				['core/image', {
+					url: `${pluginUrl}assets/placeholder.jpg`,
+					alt: 'Placeholder image'
+				}],
+				['core/image', {
+					url: `${pluginUrl}assets/placeholder.jpg`,
+					alt: 'Placeholder image'
+				}]
 			],
 			templateLock: false,
 			max: 6
@@ -157,7 +181,6 @@ addFilter(
 
 /**
  * Apply focal point styles to saved HTML
- * This adds the CSS custom property to the figure element in the saved content
  */
 addFilter(
 	'blocks.getSaveElement',
@@ -173,8 +196,7 @@ addFilter(
 			return element;
 		}
 
-		// Add CSS custom property to figure element
-		return React.cloneElement(element, {
+		return cloneElement(element, {
 			...element.props,
 			style: {
 				'--object-position': `${attributes.focalPoint.x * 100}% ${attributes.focalPoint.y * 100}%`
