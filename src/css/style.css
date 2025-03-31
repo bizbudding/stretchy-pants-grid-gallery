@@ -12,6 +12,8 @@
 		div {
 			width: 100% !important;
 			height: 100% !important;
+			max-width: unset !important;
+			max-height: unset !important;
 		}
 
 		img {

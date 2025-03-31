@@ -6,7 +6,7 @@ import { useBlockProps, useInnerBlocksProps, InnerBlocks, InspectorControls } fr
 import { gallery as icon } from '@wordpress/icons';
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
-import { FocalPointPicker, PanelBody } from '@wordpress/components';
+import { FocalPointPicker } from '@wordpress/components';
 import { useState, cloneElement } from '@wordpress/element';
 import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
@@ -162,14 +162,12 @@ addFilter(
 		return (
 			<>
 				<BlockEdit {...props} />
-				<InspectorControls group="styles">
-					<PanelBody
-						title={__('Focal Point Picker')}
-						initialOpen={true}
-					>
+				<InspectorControls>
+					<div style={{ padding: '0 16px 16px' }}>
 						{imageUrl && (
 							<FocalPointPicker
 								__nextHasNoMarginBottom
+								label={__('Focal Point')}
 								url={imageUrl}
 								value={focalPoint}
 								onDragStart={handleFocalPointChange}
@@ -177,7 +175,7 @@ addFilter(
 								onChange={handleFocalPointChange}
 							/>
 						)}
-					</PanelBody>
+					</div>
 				</InspectorControls>
 			</>
 		);
