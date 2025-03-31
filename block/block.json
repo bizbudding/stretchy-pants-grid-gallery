@@ -6,7 +6,6 @@
 	"category": "media",
 	"keywords": [ "gallery", "grid", "images", "video" ],
 	"textdomain": "stretchy-pants-grid-gallery",
-	"version": "0.1.0",
 	"supports": {
 		"align": [ "wide", "full" ],
 		"html": false
