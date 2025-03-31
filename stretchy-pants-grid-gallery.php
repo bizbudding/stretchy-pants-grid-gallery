@@ -29,7 +29,7 @@ add_action( 'init', __NAMESPACE__ . '\init' );
  * @return void
  */
 function init() {
-	register_block_type( __DIR__ . '/block', [ 'pluginUrl' => plugin_dir_url( __FILE__ ) ] );
+	register_block_type( __DIR__ . '/block' );
 }
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\updater' );
