@@ -136,8 +136,10 @@ addFilter(
 
 		// Check if this image is inside our grid gallery block
 		const parentBlocks = props.clientId ? getBlockParents(props.clientId) : [];
-		const parentBlockId = parentBlocks[0];
-		const isChildOfGridGallery = parentBlockId ? getBlockName(parentBlockId) === 'stretchypants/grid-gallery' : false;
+		// Check all ancestors for our grid gallery block
+		const isChildOfGridGallery = parentBlocks.some(parentId =>
+			getBlockName(parentId) === 'stretchypants/grid-gallery'
+		);
 
 		// Only show focal point picker for images in our gallery
 		if (!isChildOfGridGallery) {
