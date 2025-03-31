@@ -29,7 +29,7 @@ add_action( 'init', __NAMESPACE__ . '\init' );
  * @return void
  */
 function init() {
-	register_block_type( __DIR__ . '/block' );
+	register_block_type( __DIR__ . '/block', [ 'version' => '0.1.4' ] );
 
 	// Localize the editor assets.
 	wp_localize_script(
