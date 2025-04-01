@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Stretchy Pants Grid Gallery
  * Description:       A lightweight and flexible grid gallery block for Stretchy Pants.
- * Version:           0.1.4
+ * Version:           0.2.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
  * Author:            BizBudding
@@ -29,7 +29,7 @@ add_action( 'init', __NAMESPACE__ . '\init' );
  * @return void
  */
 function init() {
-	register_block_type( __DIR__ . '/block', [ 'version' => '0.1.4' ] );
+	register_block_type( __DIR__ . '/block' );
 
 	// Localize the editor assets.
 	wp_localize_script(
