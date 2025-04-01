@@ -1,33 +1,25 @@
-const path = require('path');
-const defaultConfig = require('@wordpress/scripts/config/webpack.config');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
+const path = require( 'path' );
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 
 module.exports = {
     ...defaultConfig,
 
     entry: {
-        'frontend': path.resolve(process.cwd(), 'src/js/frontend.js'), // Main JS file for frontend
-        'index': path.resolve(process.cwd(), 'src/js/index.js'), // Main JS file for block registration
-        'editor': path.resolve(process.cwd(), 'src/css/editor.css'), // CSS for the editor
+        'editor' : path.resolve( process.cwd(), 'src/editor.js' ),
+        'frontend': path.resolve( process.cwd(), 'src/frontend.js' ),
+        'main': path.resolve( process.cwd(), 'src/main.css' ),
+        'styles': path.resolve( process.cwd(), 'src/styles.css' ),
     },
 
     output: {
-        ...defaultConfig.output,
-        path: path.resolve(process.cwd(), 'build'),
-        filename: '[name].js', // Output JS files named according to entry keys
+        filename: '[name].js',
+        path: path.resolve( process.cwd(), 'build/' ),
     },
 
     plugins: [
         ...defaultConfig.plugins,
-        new RemoveEmptyScriptsPlugin(), // Remove any empty JS files
-        new MiniCssExtractPlugin({
-            filename: '[name].css', // Output CSS files named according to entry keys
-        }),
-    ],
 
-    optimization: {
-        splitChunks: false, // Disable code splitting
-        runtimeChunk: false, // Disable runtime chunk
-    },
+        new RemoveEmptyScriptsPlugin(),
+    ],
 };

@@ -1,17 +1,24 @@
 {
 	"apiVersion": 3,
 	"name": "stretchypants/grid-gallery",
-	"title": "SP Grid Gallery",
-	"description": "A lightweight and flexible grid gallery block.",
+	"title": "Stretchy Pants Grid Gallery",
+	"description": "A responsive grid gallery with lightbox support",
 	"category": "media",
+	"icon": "grid-view",
 	"keywords": [ "gallery", "grid", "images", "video" ],
 	"textdomain": "stretchy-pants-grid-gallery",
 	"supports": {
 		"align": [ "wide", "full" ],
 		"html": false
 	},
-	"editorScript": "file:../build/index.js",
-	"editorStyle": "file:../build/editor.css",
-	"viewStyle": "file:../build/frontend.css",
+	"attributes": {
+		"focalPoints": {
+			"type": "object",
+			"default": {}
+		}
+	},
+	"editorScript": "file:../build/editor.js",
+	"editorStyle": "file:../build/main.css",
+	"style": "file:../build/styles.css",
 	"viewScript": "file:../build/frontend.js"
 }

@@ -1,5 +1,3 @@
-import '../css/style.css';
-import '../css/lightbox.css';
 import GLightbox from 'glightbox';
 
 /**

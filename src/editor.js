@@ -14,8 +14,7 @@ import { __ } from '@wordpress/i18n';
 /**
  * Internal dependencies
  */
-import '../css/editor.css';
-import metadata from '../../block/block.json';
+import metadata from '../block/block.json';
 
 /**
  * Register the Grid Gallery block
