@@ -18,7 +18,7 @@
 		}
 	},
 	"editorScript": "file:../build/editor.js",
-	"editorStyle": "file:../build/main.css",
-	"style": "file:../build/styles.css",
-	"viewScript": "file:../build/frontend.js"
+	"editorStyle": "file:../build/editor-styles.css",
+	"viewScript": "file:../build/frontend.js",
+	"viewStyle": "file:../build/styles.css"
 }

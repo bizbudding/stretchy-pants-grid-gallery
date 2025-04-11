@@ -1,3 +1,6 @@
+/*!******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/main.css ***!
+  \******************************************************************************************************************************************************************/
 .wp-block-stretchypants-grid-gallery {
 	display: grid;
 	gap: 8px;
@@ -20,7 +23,8 @@
 			display: block !important;
 			width: 100% !important;
 			height: 100% !important;
-			object-position: var(--object-position, 50% 50%) !important;
+			-o-object-position: var(--object-position, 50% 50%) !important;
+			   object-position: var(--object-position, 50% 50%) !important;
 		}
 	}
 
@@ -33,7 +37,8 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		-o-object-fit: cover;
+		   object-fit: cover;
 	}
 
 	.components-resizable-box__handle  {
@@ -247,3 +252,28 @@
 		}
 	}
 }
+/*!***************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/editor-styles.css ***!
+  \***************************************************************************************************************************************************************************/
+.wp-block-stretchypants-grid-gallery {
+	position: relative;
+
+	figcaption {
+		position: absolute;
+		bottom: 8px;
+		left: 8px;
+		right: 8px;
+		width: calc(100% - 16px);
+		margin: 0;
+		padding: 4px;
+		background: rgba(255, 255, 255, 0.75);
+		color: rgba(0, 0, 0, 0.75);
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+}
+
+
+/*# sourceMappingURL=editor-styles.css.map*/

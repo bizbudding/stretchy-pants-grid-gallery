@@ -7,8 +7,8 @@ module.exports = {
 
     entry: {
         'editor' : path.resolve( process.cwd(), 'src/editor.js' ),
+        'editor-styles': path.resolve( process.cwd(), 'src/editor-styles.css' ),
         'frontend': path.resolve( process.cwd(), 'src/frontend.js' ),
-        'main': path.resolve( process.cwd(), 'src/main.css' ),
         'styles': path.resolve( process.cwd(), 'src/styles.css' ),
     },
 

@@ -1,6 +1,12 @@
 @import 'glightbox/dist/css/glightbox.min.css';
 @import './main.css';
 
+.wp-block-stretchypants-grid-gallery {
+	figcaption {
+		display: none;
+	}
+}
+
 .gbtn,
 .plyr__control:where(button) {
 	all: unset;
