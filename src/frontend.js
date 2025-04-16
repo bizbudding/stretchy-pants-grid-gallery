@@ -8,6 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	const galleries = document.querySelectorAll('.wp-block-stretchypants-grid-gallery');
 	const lightboxInstances = new Map(); // Store GLightbox instances
 
+	// Add debug styles
+	galleries.forEach(gallery => {
+		gallery.style.outline = '2px solid red';
+		gallery.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+		gallery.style.position = 'relative';
+
+		// Add debug ID
+		gallery.id = 'debug-grid-' + Math.random().toString(36).substr(2, 9);
+
+		// Add debug styles to grid items
+		gallery.querySelectorAll('> *').forEach(item => {
+			item.style.outline = '1px solid blue';
+			item.style.backgroundColor = 'rgba(0, 0, 255, 0.1)';
+		});
+	});
+
 	/**
 	 * Initialize GLightbox for a gallery
 	 * @param {HTMLElement} galleryEl - The gallery container element
